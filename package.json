@@ -1,0 +1,19 @@
+{
+  "name": "broadcast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "broadcast.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "csv": "^5.0.0",
+    "inquirer": "^6.2.1",
+    "sendgrid": "^5.2.3"
+  }
+}
