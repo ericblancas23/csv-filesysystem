@@ -54,9 +54,14 @@ let __sendEmail = function(to, from, subject, callback) {
 
 }
 
+sg.API(request, function(error, request) {
+    if(error) {return callback(error)}
+    callback()
+});
+
 stream
     .on('error', function(error) {
-        return console.error(err.message);
+        return console.error(err.response);
     })
     .on('data', function(data) {
         let firsname = data[0];
