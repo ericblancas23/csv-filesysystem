@@ -64,14 +64,22 @@ stream
         return console.error(err.response);
     })
     .on('data', function(data) {
-        let firsname = data[0];
-        let lastname = data[1];
+        let name = data[0] + " " + data[1];
         let email = data[2];
-        console.log(firstname, lastname, email);
+        contactList.push({name: name, enail: email});
     })
     .on('end', function(end) {
         inquirer.prompt(questions).then(function(answers) {
-            console.log(answers);
+            async.each(contactList, function(reciepients,fn) {
+                __sendEmail(reciepients, ans.sender, ans.subject, fn);
+
+            }, function(err){
+                if(err) {
+                    return console.error(chalk.red(err.message))
+                } else {
+                    console.log(chalk.green('success'));
+                }
+            })
         })
     })
 
