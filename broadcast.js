@@ -38,7 +38,7 @@ let stream = fs.createReadStream(program.list)
 
 let __sendEmail = function(to, from, subject, callback) {
     let template = "Wishing you a Merry Christmas and a " + 
-        "prosperous year ahead. P.S Toby I hate you";
+        "prosperous year ahead. P.S Toby I love you";
     let helper = require('sendgrid').mail;
     let fromEmail = new helper.Email(from.email, from.name);
     let toEmail = new helper.Email(to.email, to.name);
